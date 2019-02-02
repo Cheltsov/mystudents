@@ -25,7 +25,7 @@ class Contract(models.Model):
 class Profile(models.Model):
     faculty = models.CharField(max_length=100, blank=False, default=None)
     speciality = models.ForeignKey(Specialities, on_delete=models.DO_NOTHING)
-    registar = models.ForeignKey(Student, on_delete=models.DO_NOTHING)
+    registar = models.CharField(max_length=100, blank=False, default=None)
     talk = models.BooleanField(default=False)
     result = models.IntegerField(default=0)
     payment = models.BooleanField(default=False)

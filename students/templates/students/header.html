@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ВУЗ - {% block title %}{% endblock title %}</title>
+    <title>Приемная комиссия - {% block title %}{% endblock title %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'students/css/main.css' %}">
 </head>
 <body>
 
     {% block content %}
     {% endblock content %}
 
-    {% include 'students/footer.html' %}
+{#    {% include 'students/footer.html' %}#}
 
 </body>
 </html>

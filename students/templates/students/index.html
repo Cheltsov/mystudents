@@ -1,10 +1,24 @@
 {% extends 'students/header.html' %}
 
 {% block title %}
-    rrrrr
+    Студенты
 {% endblock %}
 
 
 {% block content %}
-    <h1>wwwwwwww</h1>
+
+    <table>
+        <tr>
+            <th>ФИО</th>
+            <th>Телефон</th>
+        </tr>
+        {% for item in list_student %}
+            <tr data-id="{{ item.id }}">
+                <td>{{ item.name }}</td>
+                <td>{{ item.phone }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
 {% endblock %}
