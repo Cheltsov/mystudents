@@ -11,11 +11,17 @@
         <tr>
             <th>ФИО</th>
             <th>Телефон</th>
+            <th>Средний балл аттестата</th>
+            <th>Предмет</th>
+            <th>Балл</th>
         </tr>
-        {% for item in list_student %}
+        {% for item in students %}
             <tr data-id="{{ item.id }}">
-                <td>{{ item.name }}</td>
+                <td>{{ item.fio }}</td>
                 <td>{{ item.phone }}</td>
+                <td>{{ item.middle }}</td>
+                <td>{{ item.lesson }}</td>
+                <td>{{ item.score }}</td>
             </tr>
         {% endfor %}
 

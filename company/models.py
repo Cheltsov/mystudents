@@ -23,6 +23,7 @@ class Contract(models.Model):
 
 
 class Profile(models.Model):
+    id_student = models.ForeignKey(Student, on_delete=models.DO_NOTHING, default=0)
     faculty = models.CharField(max_length=100, blank=False, default=None)
     speciality = models.ForeignKey(Specialities, on_delete=models.DO_NOTHING)
     registar = models.CharField(max_length=100, blank=False, default=None)
