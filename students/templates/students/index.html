@@ -7,6 +7,8 @@
 
 {% block content %}
 
+    <button id="add_student" class="opener">Добавить</button>
+
     <table>
         <tr>
             <th>ФИО</th>
@@ -14,17 +16,43 @@
             <th>Средний балл аттестата</th>
             <th>Предмет</th>
             <th>Балл</th>
+            <th></th>
         </tr>
         {% for item in students %}
-            <tr data-id="{{ item.id }}">
+            <tr data-id="{{ item.id }}" onclick="window.location.href = '{{ item.id }}'" >
                 <td>{{ item.fio }}</td>
                 <td>{{ item.phone }}</td>
                 <td>{{ item.middle }}</td>
                 <td>{{ item.lesson }}</td>
                 <td>{{ item.score }}</td>
+                <td><button>Редактировать</button><button>Удалить</button></td>
             </tr>
         {% endfor %}
 
     </table>
+
+    <div id="dialog_add_student" title="Добавить Студента">
+        <form action="{% url "ajax_add_student" %}" method="post" id="form_add_student">
+            {% csrf_token %}
+            <label>ФИО: </label>
+            <input type="text" name="name" autocomplete="off">
+            <br>
+            <label>Адрес: </label>
+            <input type="text" name="address" autocomplete="off">
+            <br>
+            <label>Телефон: </label>
+            <input type="text" name="phone" autocomplete="off"><br>
+            <label>Дата рождения: </label>
+            <input type="text" name="birth" autocomplete="off"><br>
+            <label>Школа: </label>
+            <input type="text" name="school" autocomplete="off"><br>
+            <label>Возможность оплаты: </label>
+            <select name="money">
+                <option value="False">Нет</option>
+                <option value="True">Да</option>
+            </select>
+            <input type="submit" value="Добавить">
+        </form>
+    </div>
 
 {% endblock %}

@@ -5,6 +5,9 @@
     <title>Приемная комиссия - {% block title %}{% endblock title %}</title>
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'students/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'students/css/jquery-ui.min.css' %}">
+    <script src="{% static "students/js/jquery-1.11.0.min.js" %}"></script>
+    <script src="{% static "students/js/jquery-ui.min.js" %}"></script>
 </head>
 <body>
 
@@ -12,6 +15,8 @@
     {% endblock content %}
 
 {#    {% include 'students/footer.html' %}#}
+
+    <script src="{% static "students/js/main.js" %}"></script>
 
 </body>
 </html>
